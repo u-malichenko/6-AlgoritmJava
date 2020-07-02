@@ -1,4 +1,4 @@
-package lesson2_1;
+package com.malichenko.lesson2.dz;
 
 public class Main {
     public static final int sizeArr = 10;

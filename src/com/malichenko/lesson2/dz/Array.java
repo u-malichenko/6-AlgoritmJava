@@ -1,4 +1,4 @@
-package lesson2_1;
+package com.malichenko.lesson2.dz;
 
 import java.util.Map;
 import java.util.TreeMap;
