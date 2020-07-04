@@ -1,3 +1,5 @@
+package com.malichenko.lesson1.dz;
+
 import java.util.Arrays;
 
 /**

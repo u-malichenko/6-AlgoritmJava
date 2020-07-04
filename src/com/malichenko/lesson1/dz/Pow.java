@@ -1,3 +1,5 @@
+package com.malichenko.lesson1.dz;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
