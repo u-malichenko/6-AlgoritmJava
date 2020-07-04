@@ -38,8 +38,8 @@ class Deque {
             tail = -1;
         queue[++tail] = value;
         items++;
-        if (items == 1)
-            head = tail;
+      //  if (items == 1)
+     //       head = tail;
     }
 
     public void insertHead(int value) {
@@ -49,8 +49,8 @@ class Deque {
             head = capacity;
         queue[--head] = value;
         items++;
-        if (items == 1)
-            tail = head;
+       // if (items == 1)
+         //   tail = head;
     }
 
     public int removeTail() {
@@ -86,7 +86,7 @@ class Deque {
         return queue[head];
     }
 
-    public void allocateNewArray() {
+    private void allocateNewArray() {
         capacity *= 2;
         int[] newQ = new int[capacity];
         if (tail >= head) {
@@ -95,9 +95,9 @@ class Deque {
             System.arraycopy(queue, 0, newQ, 0, tail + 1);
             System.arraycopy(queue, head,
                     newQ, capacity - (queue.length - head),
-                    queue.length - head);
+                    queue.length - head);//-1
+            head = capacity - (queue.length - head);
         }
-        head = capacity - (queue.length - head);
         queue = newQ;
     }
 }
@@ -119,6 +119,9 @@ class DequeApp {
         q.insertHead(12);
         q.insertHead(13);
         q.insertHead(14);
+        q.removeTail();
+        q.removeHead();
+        q.peekHead();
 
         while (!q.isEmpty()) {
             int item = q.removeTail();

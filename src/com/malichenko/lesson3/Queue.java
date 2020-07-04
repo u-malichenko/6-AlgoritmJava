@@ -40,7 +40,9 @@ public class Queue {
                 System.arraycopy(queue, head,
                         newQ, capacity - (queue.length - head),
                         queue.length - head - 1);
+                head = capacity - (queue.length - head);
             }
+
             queue = newQ;
         }
         if (tail == capacity - 1)
@@ -68,4 +70,51 @@ public class Queue {
     // [|t..h|||||]
     // [|t..................]
 
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int[] getQueue() {
+        return queue;
+    }
+
+    public void setQueue(int[] queue) {
+        this.queue = queue;
+    }
+
+    public int getHead() {
+        return head;
+    }
+
+    public void setHead(int head) {
+        this.head = head;
+    }
+
+    public int getTail() {
+        return tail;
+    }
+
+    public void setTail(int tail) {
+        this.tail = tail;
+    }
+
+    public int getItems() {
+        return items;
+    }
+
+    public void setItems(int items) {
+        this.items = items;
+    }
+
+    public int getSize() {
+        return capacity;
+    }
+
+    public void setSize(int size) {
+        this.capacity = size;
+    }
 }
