@@ -1,4 +1,4 @@
-package ru.gb.jads.elesson.online;
+package com.malichenko.lesson5;
 
 public class Main {
 
