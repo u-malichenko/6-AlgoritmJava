@@ -1,4 +1,4 @@
-package ru.gb.jads.dlesson.online;
+package com.malichenko.lesson4;
 
 import java.util.Objects;
 

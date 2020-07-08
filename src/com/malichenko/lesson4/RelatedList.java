@@ -1,4 +1,4 @@
-package ru.gb.jads.dlesson.online;
+package com.malichenko.lesson4;
 
 import java.util.Objects;
 
@@ -31,11 +31,9 @@ public class RelatedList {
     }
 
     private Node head;
-    private int size;
 
     public RelatedList() {
         head = null;
-        size = 0;
     }
 
     public boolean isEmpty() {
@@ -46,14 +44,12 @@ public class RelatedList {
         Node n = new Node(c);
         n.next = head;
         head = n;
-        size++;
     }
 
     public Cat pop() {
         if (isEmpty()) return null;
         Cat temp = head.c;
         head = head.next;
-        size--;
         return temp;
     }
 

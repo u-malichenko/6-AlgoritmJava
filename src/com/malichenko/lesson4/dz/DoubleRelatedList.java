@@ -45,6 +45,17 @@ public class DoubleRelatedList {
         newNode.next = head;
         head = newNode;
     }
+//    public void push(Cat c) {
+//        Node n = new Node<>(c);
+//        n.next = head; // if (head == null) n.next = null;
+//        if (head == null) {
+//            tail = n;
+//        } else {
+//            head.prev = n;
+//        }
+//        head = n;
+//        iterator.reset();
+//    }
 
     public void insertTail(Cat c) {
         Node newNode = new Node(c);
@@ -80,6 +91,20 @@ public class DoubleRelatedList {
         tail = tail.prev;
         return temp;
     }
+//    public T pop() {
+//        if (isEmpty()) return null;
+//        T c = tail.c;
+//        if (tail.prev != null) {
+//            tail.prev.next = null;
+//            tail = tail.prev;
+//            iterator.reset();
+//        } else {
+//            tail = null;
+//            head = null;
+//            iterator = null;
+//        }
+//        return c;
+//    }
 
     @Override
     public String toString() {
@@ -133,4 +158,33 @@ public class DoubleRelatedList {
         }
         return true;
     }
+//    public T delete(T c) {
+//        Node<T> n = new Node<>(c);
+//        Node<T> current = head;
+//        Node<T> previous = head;
+//
+//        while (!current.equals(n)) {
+//            if (current.next == null) return null;
+//            else {
+//                previous = current;
+//                current = current.next;
+//            }
+//        }
+//        if (current == head && current == tail) {
+//            head = null;
+//            tail = null;
+//            iterator = null;
+//        } else if (current == head) {
+//            head.next.prev = null;
+//            head = head.next;
+//        } else if (current == tail) {
+//            tail.prev.next = null;
+//            tail = tail.prev;
+//        } else {
+//            previous.next = current.next;
+//            current.next.prev = previous;
+//        }
+//
+//        return current.c;
+//    }
 }
