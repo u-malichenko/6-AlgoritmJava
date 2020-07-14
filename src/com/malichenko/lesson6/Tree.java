@@ -3,8 +3,6 @@ package com.malichenko.lesson6;
 import com.malichenko.lesson4.Cat;
 
 public class Tree {
-    // travers
-    // delete
 
     private class TreeNode implements Comparable {
         private Cat c;
@@ -31,6 +29,10 @@ public class Tree {
     }
 
     TreeNode root;
+
+    public TreeNode getRoot() {
+        return root;
+    }
 
     public void insert(Cat c) {
         TreeNode node = new TreeNode(c);
@@ -151,6 +153,26 @@ public class Tree {
             s.right = node.right;
         }
         return s;
+    }
+
+    public static int getHeight(TreeNode treeNode) {
+        if (treeNode == null) return 0;
+        if (treeNode.left == null && treeNode.right == null) return 1;
+
+        int left = 0;
+        if (treeNode.left != null) {
+            left = getHeight(treeNode.left);
+        }
+        int right = 0;
+        if (treeNode.right != null) {
+            right = getHeight(treeNode.right);
+        }
+        return (Math.max(left, right) + 1);
+    }
+
+    public static boolean isBalance(TreeNode node) {
+        if (node == null) return true;
+        return Math.abs(Math.max(getHeight(node.left), 0) - Math.max(getHeight(node.right), 0)) < 2;
     }
 
 }
