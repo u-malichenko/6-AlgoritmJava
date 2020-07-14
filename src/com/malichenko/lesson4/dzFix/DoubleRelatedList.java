@@ -1,4 +1,6 @@
-package ru.gb.jads.dlesson.home;
+package com.malichenko.lesson4.dzFix;
+
+import com.malichenko.lesson4.Cat;
 
 import java.util.Objects;
 
