@@ -1,4 +1,4 @@
-package com.malichenko.lesson6.dzFix;
+package com.malichenko.lesson7;
 
 import com.malichenko.lesson3.Queue;
 import com.malichenko.lesson3.Stack;
