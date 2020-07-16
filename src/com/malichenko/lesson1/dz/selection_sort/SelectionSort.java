@@ -1,4 +1,4 @@
-package selection_sort;
+package com.malichenko.lesson1.dz.selection_sort;
 
 /**
  * Сортировка методом выбора.
