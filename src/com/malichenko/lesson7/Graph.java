@@ -1,14 +1,17 @@
-package com.malichenko.lesson6.dzFix;
+package com.malichenko.lesson7;
 
 import com.malichenko.lesson3.Queue;
 import com.malichenko.lesson3.Stack;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class Graph {
     private class Vertex {
-        char label;
+        String label;
         boolean wasVisited;
 
-        public Vertex(char label) {
+        public Vertex(String label) {
             this.label = label;
             this.wasVisited = false;
         }
@@ -21,7 +24,7 @@ public class Graph {
         }
     }
 
-    private final int MAX_VERTICES = 32;
+    private final int MAX_VERTICES = 42;
     private Vertex[] vertexList;
     private int[][] adjMatrix;
     private int size;
@@ -32,7 +35,7 @@ public class Graph {
         size = 0;
     }
 
-    public void addVertex(char label) {
+    public void addVertex(String label) {
         vertexList[size++] = new Vertex(label);
     }
 
@@ -85,6 +88,29 @@ public class Graph {
                 queue.insert(vNext);
             }
         }
+    }
+
+    public Stack minPatch(int source, int dest) {
+
+        Stack pathStack = new Stack(MAX_VERTICES);
+        Queue queue = new Queue(MAX_VERTICES);
+        vertexList[source].wasVisited = true;
+        queue.insert(source);
+
+        while (!queue.isEmpty()) {
+            int vCurrent = queue.remove();
+            pathStack.push(vCurrent);
+            int vNext;
+            while ((vNext = getUnvisitedVertex(vCurrent)) != -1) {
+                vertexList[vNext].wasVisited = true;
+                queue.insert(vNext);
+                pathStack.push(vNext);
+                if (vNext == dest)
+                    return  pathStack;
+                pathStack.pop();
+            }
+        }
+        return  pathStack;
 
     }
 
